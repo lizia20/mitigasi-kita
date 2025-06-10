@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 import "leaflet/dist/leaflet.css";
 import "sweetalert2/dist/sweetalert2.css";
-import { registerSW } from 'virtual:pwa-register';
+import { registerSW } from "virtual:pwa-register";
 
 registerSW();
 

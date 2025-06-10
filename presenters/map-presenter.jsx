@@ -5,10 +5,14 @@ import {
 } from "../src/utils/auth";
 import MySwal from "sweetalert2";
 
-export async function handlePredictionPresenter(selectedCity, setPrediction, setIsLoading) {
+export async function handlePredictionPresenter(
+  selectedCity,
+  setPrediction,
+  setIsLoading,
+) {
   if (!selectedCity?.lat || !selectedCity?.long) return;
   setIsLoading(true);
-   try {
+  try {
     const data = await fetchPrediction(selectedCity.lat, selectedCity.long);
     setPrediction(data);
   } catch (error) {

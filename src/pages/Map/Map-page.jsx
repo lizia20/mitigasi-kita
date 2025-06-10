@@ -34,7 +34,7 @@ function Map() {
   const [selectedCity, setSelectedCity] = useState(null);
   const [prediction, setPrediction] = useState(null);
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="flex flex-col ">
       <Navbar className="fixed top-0 left-0 w-full z-[9999] bg-white shadow-md" />
@@ -93,7 +93,11 @@ function Map() {
               <CitySelect onCityChange={setSelectedCity} />
               <button
                 onClick={() =>
-                  handlePredictionPresenter(selectedCity, setPrediction, setIsLoading)
+                  handlePredictionPresenter(
+                    selectedCity,
+                    setPrediction,
+                    setIsLoading,
+                  )
                 }
                 className="w-full bg-[#0D3553] text-white py-2 px-6 rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={!selectedCity || isLoading}
@@ -129,8 +133,8 @@ function Map() {
                             prediction.status === "Aman"
                               ? "text-green-600"
                               : prediction.status === "Waspada"
-                              ? "text-yellow-500"
-                              : "text-red-600"
+                                ? "text-yellow-500"
+                                : "text-red-600"
                           }
                         />
                         <strong className="font-bold">Status:</strong>
@@ -139,7 +143,9 @@ function Map() {
                       <p className="flex items-center gap-3">
                         <FaWaveSquare color="C43238" />
                         <strong className="font-bold">Gempa Bumi:</strong>
-                        <span>{parseFloat(prediction.magnitude).toFixed(4)} M</span>
+                        <span>
+                          {parseFloat(prediction.magnitude).toFixed(4)} M
+                        </span>
                       </p>
                       <p className="flex items-center gap-3">
                         <FaWater color="0687C3" />
