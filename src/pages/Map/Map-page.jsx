@@ -39,11 +39,11 @@ function Map() {
     <div className="flex flex-col ">
       <Navbar className="fixed top-0 left-0 w-full z-[9999] bg-white shadow-md" />
 
-      <div className="w-full max-w-screen-xl mx-auto pb-1">
+      <div className="w-full max-w-screen-xl mx-auto pb-1 h-screen">
         <div className="flex flex-col md:flex-row flex-1 p-4 gap-4 mt-[100px]">
           {/* MAP SECTION */}
           <div
-            className="w-full h-[250px] sm:h-[300px] md:w-2/3 md:h-[500px] rounded-lg overflow-hidden shadow-lg z-10 order-1 md:order-1"
+            className="w-full h-full sm:h-[300px] md:w-2/3 md:h-[500px] rounded-lg overflow-hidden shadow-lg z-10 order-1 md:order-1"
             style={{ boxShadow: "-4px 4px 4px rgba(0, 0, 0, 0.5)" }}
           >
             <MapContainer
@@ -82,7 +82,7 @@ function Map() {
 
           {/* PREDICTION PANEL SECTION */}
           <div
-            className="w-full md:w-1/3 bg-[#0D3553] p-4 sm:p-5 md:p-6 rounded-lg text-white text-md sm:text-lg md:text-base font-poppins flex flex-col justify-between z-20 order-2 md:order-2"
+            className="w-full h-full md:w-1/3 bg-[#0D3553] p-4 sm:p-5 md:p-6 rounded-lg text-white text-md sm:text-lg md:text-base font-poppins flex flex-col justify-between z-20 order-2 md:order-2"
             style={{ boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.5)" }}
           >
             {/* Form Prediksi */}
@@ -119,12 +119,20 @@ function Map() {
                   <>
                     <div className="text-black font-poppins text-xs sm:text-sm md:text-lg space-y-3">
                       <p className="flex items-center gap-3">
-                        <FaLocationDot color="6D0000" />
+                        <FaLocationDot color="000000" />
                         <strong className="font-bold">Lokasi:</strong>
                         <span>{prediction.city}</span>
                       </p>
                       <p className="flex items-center gap-3">
-                        <FaCircleInfo color="0D3553" />
+                        <FaCircleInfo
+                          className={
+                            prediction.status === "Aman"
+                              ? "text-green-600"
+                              : prediction.status === "Waspada"
+                              ? "text-yellow-500"
+                              : "text-red-600"
+                          }
+                        />
                         <strong className="font-bold">Status:</strong>
                         <span>{prediction.status}</span>
                       </p>
