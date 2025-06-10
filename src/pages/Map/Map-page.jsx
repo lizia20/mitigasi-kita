@@ -34,7 +34,7 @@ function Map() {
   const [selectedCity, setSelectedCity] = useState(null);
   const [prediction, setPrediction] = useState(null);
   const navigate = useNavigate();
-
+  const [isLoading, setIsLoading] = useState(false)
   return (
     <div className="flex flex-col ">
       <Navbar className="fixed top-0 left-0 w-full z-[9999] bg-white shadow-md" />
@@ -93,12 +93,16 @@ function Map() {
               <CitySelect onCityChange={setSelectedCity} />
               <button
                 onClick={() =>
-                  handlePredictionPresenter(selectedCity, setPrediction)
+                  handlePredictionPresenter(selectedCity, setPrediction, setIsLoading)
                 }
                 className="w-full bg-[#0D3553] text-white py-2 px-6 rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={!selectedCity}
+                disabled={!selectedCity || isLoading}
               >
-                Prediksi
+                {isLoading ? (
+                  <span className="text-xl font-bold loading-dots"></span>
+                ) : (
+                  "Prediksi"
+                )}
               </button>
             </div>
 
