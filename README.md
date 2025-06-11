@@ -1,4 +1,4 @@
-# Mitigasi Kita - Aplikasi Front-End Capstone Project
+# Mitigasi Kita - Web App untuk Mitigasi dan Prediksi Bencana di Indonesia
 
 "Mitigasi Kita" adalah aplikasi yang dirancang untuk membantu masyarakat Indonesia memahami dan mempersiapkan diri menghadapi berbagai potensi risiko dan bencana, seperti gempa bumi dan tsunami. Aplikasi ini mendukung peningkatan kesadaran publik dan kesiapsiagaan masyarakat dengan fitur interaktif dan informatif.
 
