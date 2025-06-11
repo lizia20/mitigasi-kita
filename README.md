@@ -1,12 +1,48 @@
-# React + Vite
+# Mitigasi Kita
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MitigasiKita** merupakan sistem peringatan dini berbasis web yang dikembangkan untuk menjembatani kesenjangan informasi kebencanaan di Indonesia, khususnya gempa dan tsunami.
 
-Currently, two official plugins are available:
+## Fitur Utama
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Login & Register
+- Peta Interaktif (Leaflet/OpenStreetMap)
+- Dropdown lokasi kota di Indonesia.
+- Prediksi tingkat resiko bencana alam. **(Aman, Waspada, Berbahaya)**
+- Menyimpan, melihat, dan menghapus riwayat prediksi
+- Notifikasi dan konfirmasi
+- Pola arsitektur **MVP (Model-View-Presenter)**
 
-## Expanding the ESLint configuration
+## Teknologi yang Digunakan
+- React + vite
+- Leaflet / OpenStreetMap (Peta interaktif)
+- SweetAlert2 (Notifikasi & Konfirmasi)
+- Tailwind CSS (Desain responsif)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Setup dan Instalasi
+```bash
+git clone https://github.com/lizia20/mitigasi-kita.git
+cd mitigasi-kita
+npm install
+```
+
+## Folder Structure
+```
+mitigasi-kita/
+├── presenters/
+├── public/
+├── src
+│    ├── assets
+│    ├── components
+│    ├── data  
+│    ├── pages
+│    ├── utils
+│    ├── App.css
+│    ├── App.jsx
+│    ├── index.css
+│    └── main.jsx
+├── .gitignore
+├── index.html
+├── package.json
+├── README.md
+└── vite.config.js
+```
